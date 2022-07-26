@@ -30,7 +30,7 @@ def load(file):
     return pickle.load(open(file,'rb'))
 
 def save(obj, file):
-    pickle.dumps(obj, open(file,'wb'))
+    pickle.dump(obj, open(file,'wb'))
 
 def set_seeds(seed):
     "set random seeds"
@@ -600,82 +600,9 @@ class Tshift(Pipeline):
         instance, label = instance
         return self.tshift(instance,label)
 
-class TshiftV5(Pipeline):
-    """ Pre-processing steps for pretraining transformer """
-    def __init__(self):
-        super().__init__()
 
-    def tshift(self, input, label):
-        if random.uniform(0,1)>0.5:
-            disp = np.random.randint(-20,21,())
-            T = input.shape[0]
-            length = sum([(input[i]!=0).any() for i in range(T)])
-            new = input.copy()
-            if disp<0:
-                new[length+disp:length] = 0
-            elif disp>0:
-                new[:-disp] = new[disp:]
-                new[length-disp:] = 0
-        else:
-            new = input.copy()
-        return new, label
 
-    def __call__(self, instance):
-        instance, label = instance
-        return self.tshift(instance,label)
-
-class TshiftV2(Pipeline):
-    """ Pre-processing steps for pretraining transformer """
-    def __init__(self):
-        super().__init__()
-        self.last = None
-
-    def tshift(self, input, label):
-        if random.uniform(0,1)>0.5 or self.last is None:
-            disp = np.random.randint(-20,21,())
-            T = input.shape[0]
-            length = sum([(input[i]!=0).any() for i in range(T)])
-            new = input.copy()
-            if disp<0:
-                new[length+disp:length] = 0
-            elif disp>0:
-                new[:-disp] = new[disp:]
-                new[length-disp:] = 0
-        else:
-            T = input.shape[0]
-            length1 = sum([(input[i]!=0).any() for i in range(T)])
-            length2 = sum([(self.last[i]!=0).any() for i in range(T)])
-            new = input.copy()
-            new[length1:min(len(input),length1+length2)]= self.last[:min(len(input),length1+length2)-length1]
-        self.last = input
-        return new, label
-
-    def __call__(self, instance):
-        instance, label = instance
-        return self.tshift(instance,label)
-
-class TshiftV3(Pipeline):
-    """ Pre-processing steps for pretraining transformer """
-    def __init__(self):
-        super().__init__()
-
-    def tshift(self, input, label):
-        T = input.shape[0]
-        length = sum([(input[i]!=0).any() for i in range(T)])
-        disp = np.random.randint(-length+1,length,())
-        new = input.copy()
-        if disp<0:
-            new[length+disp:length] = 0
-        elif disp>0:
-            new[:-disp] = new[disp:]
-            new[length-disp:] = 0
-        return new, label
-
-    def __call__(self, instance):
-        instance, label = instance
-        return self.tshift(instance,label)
-
-class TshiftV6(Pipeline):
+class RTC(Pipeline):
     """ Pre-processing steps for pretraining transformer """
     def __init__(self):
         super().__init__()
@@ -693,7 +620,7 @@ class TshiftV6(Pipeline):
         instance, label = instance
         return self.tshift(instance,label)
 
-class TshiftV6Rfwash(Pipeline):
+class RTCRfwash(Pipeline):
     """ Pre-processing steps for pretraining transformer """
     def __init__(self):
         super().__init__()
@@ -714,79 +641,8 @@ class TshiftV6Rfwash(Pipeline):
         newVRS, newARS = self.tshift(VRS,ARS)
         return newVRS, newARS, label
 
-class TshiftV7(Pipeline):
-    """ Pre-processing steps for pretraining transformer """
-    def __init__(self):
-        super().__init__()
 
-    def tshift(self, input, label):
-        if random.uniform(0,1)>0.5:
-            T = input.shape[0]
-            length = sum([(input[i]!=0).any() for i in range(T)])
-            selected_length = np.random.randint(1,length+1)
-            start = np.random.randint(0,length-selected_length+1)
-            new = np.zeros_like(input)
-            new[:selected_length] = input[start:start+selected_length]
-        else:
-            new = input.copy()
-        return new, label
 
-    def __call__(self, instance):
-        instance, label = instance
-        return self.tshift(instance,label)
-
-class Tscale(Pipeline):
-    """ Pre-processing steps for pretraining transformer """
-    def __init__(self):
-        super().__init__()
-
-    def _Tscale(self,input, label):
-        new = input.copy()
-        nT = new.shape[0]
-        ratio = np.random.rand()*0.6+0.7
-        f = interp1d(np.arange(nT), new, kind='linear',axis=0)
-        T = new.shape[0]
-        length = sum([(new[i]!=0).any() for i in range(T)])
-        if ratio>1:
-            tNew = np.arange(ratio*(length-1))[:nT]/ratio
-            new[:len(tNew)] = f(tNew)/ratio
-            new[len(tNew):] = 0
-        else:
-            tNew = np.arange(ratio*(length-1))/ratio
-            new[:len(tNew)] = f(tNew)/ratio
-            new[len(tNew):] = 0
-        return new, label
-
-    def __call__(self, instance):
-        instance, label = instance
-        return self._Tscale(instance,label)
-
-class Tscale2(Pipeline):
-    """ Pre-processing steps for pretraining transformer """
-    def __init__(self, scale=0.3):
-        super().__init__()
-        self.scale = scale
-
-    def _Tscale(self,input, label):
-        new = input.copy()
-        nT = new.shape[0]
-        ratio = np.random.rand()*self.scale+1-0.5*self.scale
-        f = interp1d(np.arange(nT), new, kind='linear',axis=0)
-        T = new.shape[0]
-        length = sum([(new[i]!=0).any() for i in range(T)])
-        if ratio>1:
-            tNew = np.arange(ratio*(length-1))[:nT]/ratio
-            new[:len(tNew)] = f(tNew)/ratio
-            new[len(tNew):] = 0
-        else:
-            tNew = np.arange(ratio*(length-1))/ratio
-            new[:len(tNew)] = f(tNew)/ratio
-            new[len(tNew):] = 0
-        return new, label
-
-    def __call__(self, instance):
-        instance, label = instance
-        return self._Tscale(instance,label)
 
 class Padding(Pipeline):
     """ Pre-processing steps for pretraining transformer """
@@ -1307,9 +1163,6 @@ def handle_argv_Classify(manual=None):
     parser.add_argument('version', type=str, help='run config')
     parser.add_argument('labelRate', type=str, help='label rate')
     parser.add_argument('-g', '--gpu', type=str, default=None, help='Set specific GPU')
-    parser.add_argument('-p', '--position', action="store_true", help='enable position independent test')
-    parser.add_argument('-c', '--crossuser', action="store_true", help='enable cross user test')
-    parser.add_argument('-u', '--user', action="store_true", help='enable user test')
     args = parser.parse_args(manual)
     run_path = 'config/runClassify.json'
     pretrain_path = 'config/runPretrain.json'
@@ -1326,9 +1179,6 @@ def handle_argv_Classify(manual=None):
     ans['gpu'] = args.gpu
     ans['version'] = args.version
     ans['step'] = step
-    ans['pi'] = args.position
-    ans['crossuser'] = args.crossuser
-    ans['user'] = args.user
     ans['label_rate'] = float(args.labelRate)
     if ans['gpu'] == None:
         ans['gpu'] = str(np.random.randint(0,4,()))
@@ -1339,9 +1189,6 @@ def handle_argv_benchmark(manual=None):
     parser.add_argument('version', type=str, help='run config')
     parser.add_argument('labelRate', type=str, help='label rate')
     parser.add_argument('-g', '--gpu', type=str, default=None, help='Set specific GPU')
-    parser.add_argument('-p', '--position', action="store_true", help='enable position independent test')
-    parser.add_argument('-c', '--crossuser', action="store_true", help='enable cross user test')
-    parser.add_argument('-u', '--user', action="store_true", help='enable user test')
     args = parser.parse_args(manual)
     run_path = 'config/runBenchmark.json'
     runJson = json.load(open(run_path, "r"))
@@ -1355,32 +1202,10 @@ def handle_argv_benchmark(manual=None):
     ans['gpu'] = args.gpu
     ans['version'] = args.version
     ans['step'] = step
-    ans['pi'] = args.position
-    ans['crossuser'] = args.crossuser
-    ans['user'] = args.user
     ans['label_rate'] = float(args.labelRate)
     if ans['gpu'] == None:
         ans['gpu'] = str(np.random.randint(0,4,()))
     return ans
-
-def handle_argv_simple():
-    parser = argparse.ArgumentParser(description='PyTorch LIMU-BERT Model')
-    parser.add_argument('model_file', type=str, default=None, help='Pretrain model file')
-    parser.add_argument('dataset', type=str, help='Dataset name', choices=['hhar', 'motion', 'uci', 'shoaib','merge'])
-    parser.add_argument('dataset_version',  type=str, help='Dataset version', choices=['10_100', '20_120'])
-    args = parser.parse_args()
-    dataset_cfg = load_dataset_stats(args.dataset, args.dataset_version)
-    if dataset_cfg is None:
-        print("Unable to find corresponding dataset config!")
-        sys.exit()
-    args.dataset_cfg = dataset_cfg
-    return args
-
-
-def load_raw_data(args):
-    data = np.load(args.data_path).astype(np.float32)
-    labels = np.load(args.label_path).astype(np.float32)
-    return data, labels
 
 
 def load_pretrain_data_config(args):
@@ -1397,33 +1222,10 @@ def load_pretrain_data_config(args):
     return data, labels, train_cfg, model_cfg, mask_cfg, dataset_cfg
 
 def loadData(path):
-    dataFiles = os.listdir(path)
-    data = {'VRSs':[],"ARSs":[],"lengths":[],"labels":[],"positions":[],'users':[]}
-    for dataFile in dataFiles:
-        obj = load(os.path.join(path,dataFile))
-        user,_ = dataFile.split('.')
-        data['VRSs'].extend(obj['VRSs'])
-        data['ARSs'].extend(obj['ARSs'])
-        data['lengths'].extend(obj['lengths'])
-        data['labels'].extend(obj['labels'])
-        data['positions'].extend([config.positions.index(pos) for pos in obj['positions']])
-        data['users'].extend([config.names.index(user)]*len(obj['VRSs']))
-        print("user: {}, num of samples: {}".format(user, len(obj['VRSs'])))
-    T = max(data['lengths'])
-    N = len(data['lengths'])
-    VRS = np.zeros((N,T,*data['VRSs'][0].shape[1:]))
-    ARS = np.zeros((N,T,*data['ARSs'][0].shape[1:]))
-    for i in range(N):
-        VRS[i][:data['lengths'][i]] = data['VRSs'][i]
-        ARS[i][:data['lengths'][i]] = data['ARSs'][i]
-    data['VRSs'] = VRS
-    data['ARSs'] = ARS
-    data['lengths']   = np.array(data['lengths'],dtype=np.int)
-    data['labels']    = np.array(data['labels'],dtype=np.int)
-    data['positions'] = np.array(data['positions'],dtype=np.int)
-    data['users']     = np.array(data['users'],dtype=np.int)
-    data['size'] = len(data["labels"])
-    return data
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    data_path = os.path.join(base_dir, "data/data")
+    return load(data_path)
+
 
 def load_pretrain_data(args):
     dataset = args['dataset']

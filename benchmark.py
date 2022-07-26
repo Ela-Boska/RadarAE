@@ -26,15 +26,6 @@ def fetch_setup(runCfg,step):
     pipeline_train = eval(runCfg["dataset"]["pipelineTrain"])
     pipeline_vali = eval(runCfg["dataset"]["pipelineVali"])
     pipeline_test = eval(runCfg["dataset"]["pipelineTest"])
-    # if runCfg['pi']:
-    #     data_train, data_vali, data_test = position_independent_dataset(data, label_rate=label_rate, seed1=benchmark_cfg.seed, seed2=benchmark_cfg.seed+step*23)
-    # elif runCfg['crossuser']:
-    #     print("cross user test, target user {}".format(runCfg['targetUser']))
-    #     data_train, data_vali, data_test = cross_user_dataset(data, runCfg['targetUser'], label_rate=label_rate, seed=benchmark_cfg.seed+step*23)
-    # elif runCfg['user']:
-    #     print("user test, target user {}".format(runCfg['targetUser']))
-    #     data_train, data_vali, data_test = user_dataset(data, runCfg['targetUser'], label_rate=label_rate, seed=benchmark_cfg.seed+step*23)
-    # else:
     data_train, data_vali, data_test = prepare_classify_dataset_mine(data, label_rate=label_rate, seed1=benchmark_cfg.seed, seed2=benchmark_cfg.seed+step*23)
     if 'origin' in runCfg['dataset']:
         data_set_train = ARSVRSDataset(data_train, pipeline=pipeline_train)
@@ -96,29 +87,18 @@ save = True
 mode = "base"
 runCfg = handle_argv_benchmark()
 label_rate = runCfg['label_rate']
-if runCfg['pi']:
-    fileName = "log/benchmark/{}_{}_PI.log".format(runCfg['version'],label_rate)
-elif runCfg['crossuser']:
-    fileName = "log/benchmark/{}_{}_CU.log".format(runCfg['version'],label_rate)
-elif runCfg['user']:
-    fileName = "log/benchmark/{}_{}_U.log".format(runCfg['version'],label_rate)
-else:
-    fileName = "log/benchmark/{}_{}.log".format(runCfg['version'],label_rate)
+fileName = "log/benchmark/{}_{}.log".format(runCfg['version'],label_rate)
 if os.path.exists(fileName):
     print("{} already exists!".format(fileName))
     exit(0)
 sys.stdout = open(fileName,'w')
-if runCfg['crossuser'] or runCfg['user']:
-    for i in range(4):
-        runCfg['targetUser'] = i
-        main(runCfg)
-else:
-    acc, f1 = [],[]
-    for i in range(5):
-        test_acc, test_f1 = main(runCfg,i)
-        acc.append(test_acc)
-        f1.append(test_f1)
-    acc = np.array(acc)
-    f1 = np.array(f1)
-    print("acc={},f1={}".format(acc,f1), flush=True)
-    print('acc: {} +- {}, f1: {} +- {}'.format(acc.mean(),acc.std(),f1.mean(),f1.std()), flush=True)
+
+acc, f1 = [],[]
+for i in range(5):
+    test_acc, test_f1 = main(runCfg,i)
+    acc.append(test_acc)
+    f1.append(test_f1)
+acc = np.array(acc)
+f1 = np.array(f1)
+print("acc={},f1={}".format(acc,f1), flush=True)
+print('acc: {} +- {}, f1: {} +- {}'.format(acc.mean(),acc.std(),f1.mean(),f1.std()), flush=True)

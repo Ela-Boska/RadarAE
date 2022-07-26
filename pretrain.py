@@ -27,19 +27,6 @@ data, train_cfg, mask_cfg = load_pretrain_data(runCfg)
 
 pipeline = eval(runCfg["dataset"]["pipeline"])
 data_train, data_test = prepare_pretrain_dataset_mine(data, seed=train_cfg.seed)
-# if runCfg['use_sup_data']:
-#     data_set_train_1 = PreTrainDataset(data_train, pipeline=pipeline)
-#     data_set_test = PreTrainDataset(data_test, pipeline=pipeline)
-
-#     data_sup = np.load('dataset/mmWave/data_base.npy')
-#     label_sup = np.load('dataset/mmWave/label_base.npy')
-#     if isinstance(pipeline[-1], VITmask):
-#         sup_pipeline = [Tshift(), Tscale(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]
-#     else:
-#         sup_pipeline = [Tshift(), Tscale(), Normalize(), Padding((71,20)), Preprocess4Mask(mask_cfg)]
-#     data_set_sup = LIBERTDataset4Pretrain(data_sup, label_sup, pipeline=sup_pipeline)
-#     data_set_train = VirtualDataset(data_set_train_1,data_set_sup)
-# else:
 data_set_train = PreTrainDataset(data_train, pipeline=pipeline)
 data_set_test = PreTrainDataset(data_test, pipeline=pipeline)
 data_loader_train = DataLoader(data_set_train, shuffle=True, batch_size=train_cfg.batch_size)

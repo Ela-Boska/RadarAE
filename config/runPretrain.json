@@ -1,5 +1,5 @@
 {
-    "RadarAE_patchSize2x10_halfAugV6_shareWeight":
+    "RadarAE_patchSize2x10_RTC_shareWeight":
     {
         "pretrainCfg":
         {
@@ -20,7 +20,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -87,7 +87,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize2x20_halfAugV6_shareWeight":
+    "RadarAE_patchSize2x20_RTC_shareWeight":
     {
         "pretrainCfg":
         {
@@ -108,7 +108,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -131,7 +131,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize2x5_halfAugV6_shareWeight":
+    "RadarAE_patchSize2x5_RTC_shareWeight":
     {
         "pretrainCfg":
         {
@@ -152,7 +152,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -175,7 +175,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize1x10_halfAugV6_shareWeight":
+    "RadarAE_patchSize1x10_RTC_shareWeight":
     {
         "pretrainCfg":
         {
@@ -196,7 +196,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -219,7 +219,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize3x10_halfAugV6_shareWeight":
+    "RadarAE_patchSize3x10_RTC_shareWeight":
     {
         "pretrainCfg":
         {
@@ -240,7 +240,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -263,7 +263,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "BERT_patchSize3x10_halfAugV6_shareWeight":
+    "BERT_patchSize3x10_RTC_shareWeight":
     {
         "pretrainCfg":
         {
@@ -285,7 +285,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), BERTmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), BERTmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -309,7 +309,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize3x10_halfAugV6_shareWeight_noCrop":
+    "RadarAE_patchSize3x10_RTC_shareWeight_noCrop":
     {
         "pretrainCfg":
         {
@@ -330,7 +330,7 @@
         "dataset":
         {
             "path":"packs_noCrop/",
-            "pipeline":"[PriVA_noCrop(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,60)), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA_noCrop(3e5, 5e4), RTC(), Normalize(), Padding((72,60)), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -353,7 +353,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize3x10_halfAugV6_shareWeight_MR0.25":
+    "RadarAE_patchSize3x10_RTC_shareWeight_MR0.25":
     {
         "pretrainCfg":
         {
@@ -374,7 +374,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -397,7 +397,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize3x10_halfAugV6_shareWeight_MR0.375":
+    "RadarAE_patchSize3x10_RTC_shareWeight_MR0.375":
     {
         "pretrainCfg":
         {
@@ -418,7 +418,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -441,7 +441,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize3x10_halfAugV6_shareWeight_MR0.5":
+    "RadarAE_patchSize3x10_RTC_shareWeight_MR0.5":
     {
         "pretrainCfg":
         {
@@ -462,7 +462,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -485,7 +485,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize3x10_halfAugV6_shareWeight_MR0.625":
+    "RadarAE_patchSize3x10_RTC_shareWeight_MR0.625":
     {
         "pretrainCfg":
         {
@@ -506,7 +506,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -529,7 +529,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize3x10_halfAugV6_shareWeight_MR0.875":
+    "RadarAE_patchSize3x10_RTC_shareWeight_MR0.875":
     {
         "pretrainCfg":
         {
@@ -550,7 +550,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -573,7 +573,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize3x10_halfAugV6":
+    "RadarAE_patchSize3x10_RTC":
     {
         "pretrainCfg":
         {
@@ -594,7 +594,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -661,7 +661,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize2x10_halfAugV6_shareWeight_RV":
+    "RadarAE_patchSize2x10_RTC_shareWeight_RV":
     {
         "pretrainCfg":
         {
@@ -682,7 +682,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), getRV(), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), getRV(), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -705,7 +705,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize2x10_halfAugV6_shareWeight_RA":
+    "RadarAE_patchSize2x10_RTC_shareWeight_RA":
     {
         "pretrainCfg":
         {
@@ -726,7 +726,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), getRA(), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), getRA(), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -749,7 +749,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize3x20_halfAugV6_shareWeight":
+    "RadarAE_patchSize3x20_RTC_shareWeight":
     {
         "pretrainCfg":
         {
@@ -770,7 +770,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -793,7 +793,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize3x5_halfAugV6_shareWeight":
+    "RadarAE_patchSize3x5_RTC_shareWeight":
     {
         "pretrainCfg":
         {
@@ -814,7 +814,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -837,7 +837,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize4x10_halfAugV6_shareWeight":
+    "RadarAE_patchSize4x10_RTC_shareWeight":
     {
         "pretrainCfg":
         {
@@ -858,7 +858,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -881,7 +881,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize3x10_halfAugV6_shareWeight_RA":
+    "RadarAE_patchSize3x10_RTC_shareWeight_RA":
     {
         "pretrainCfg":
         {
@@ -902,7 +902,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), getRA(), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), getRA(), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",
@@ -925,7 +925,7 @@
         "pretrain_model": null,
         "use_sup_data":false
     },
-    "RadarAE_patchSize3x10_halfAugV6_shareWeight_RV":
+    "RadarAE_patchSize3x10_RTC_shareWeight_RV":
     {
         "pretrainCfg":
         {
@@ -946,7 +946,7 @@
         "dataset":
         {
             "path":"packs/",
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), getRV(), VITmask(mask_cfg)]"
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), getRV(), VITmask(mask_cfg)]"
         },
         "encoder": {
             "type": "RadarAE",

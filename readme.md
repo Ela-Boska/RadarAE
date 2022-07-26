@@ -21,7 +21,7 @@ Pretrain the encoder:
 ```
 # config/runPretrain.json
 {
-    "RadarAE_base": # the configuration name, used when running scripts
+    "RadarAE_patchSize3x10_RTC_shareWeight": # the configuration name, used when running scripts
     {
         "pretrainCfg":
         {
@@ -42,7 +42,7 @@ Pretrain the encoder:
         "dataset":
         {
             "path":"packs/", # ignore it
-            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask()]" # transformation performed on the input data. These methods are defined in "src/transformations/pipeline.py".
+            "pipeline":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITmask()]" # transformation performed on the input data. These methods are defined in "src/transformations/pipeline.py".
         },
         "encoder": {
             "type": "RadarAE", # encoder model. They are defined in "models.py".
@@ -68,17 +68,17 @@ Pretrain the encoder:
 }
 ```
 ```
-# python src/pretrain.py ${configuration_name} -g ${GPU_id} 
-python src/pretrain.py RadarAE_base -g 0
+# python pretrain.py ${configuration_name} -g ${GPU_id} 
+python pretrain.py RadarAE_patchSize3x10_RTC_shareWeight -g 0
 ```
 
 Train the classifier:
 ```
 # config/runPretrain.json
 {
-    "RadarAE": # configuration name.
+    "RadarAE_3x10": # configuration name.
     {
-        "pretrainCfgVersion":"RadarAE_base", # configuration name of pretraining. This name has to be exactly equal to the configuration name in "config/runPretrain.json"
+        "pretrainCfgVersion":"RadarAE_patchSize3x10_RTC_shareWeight", # configuration name of pretraining. This name has to be exactly equal to the configuration name in "config/runPretrain.json"
         "classifyCfg":
         {
             "seed": 3431, # random seed
@@ -91,7 +91,7 @@ Train the classifier:
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput()]", # processing steps for training data
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITInput()]", # processing steps for training data
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput()]", # processing steps for validating data
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput()]" # processing steps for testing data
         },
@@ -106,8 +106,8 @@ Train the classifier:
 }
 ```
 ```
-# python src/classify.py ${configuration_name} ${labeling rate} -g ${GPU_id}
-python src/classify.py RadarAE 0.01 -g 0
+# python classify.py ${configuration_name} ${labeling rate} -g ${GPU_id}
+python classify.py RadarAE_3x10 0.01 -g 0
 ```
 
 You should first pretrain an encoder, then train a classifier.
@@ -131,7 +131,7 @@ For a benchmark test, you only need one configuration and one script:
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Padding((72,20)), Normalize()]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Padding((72,20)), Normalize()]",
             "pipelineVali":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]",
             "pipelineTest":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]"
         },
@@ -142,4 +142,8 @@ For a benchmark test, you only need one configuration and one script:
         "save_path":"saved/Benchmark/"
     }
 }
+```
+```
+# python benchmark.py ${configuration_name} ${labeling rate} -g ${GPU_id}
+python benchmark.py DCNN3_shift 0.01 -g 0
 ```

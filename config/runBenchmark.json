@@ -279,7 +279,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Padding((72,20)), Normalize()]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Padding((72,20)), Normalize()]",
             "pipelineVali":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]",
             "pipelineTest":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]"
         },
@@ -304,7 +304,7 @@
         "dataset":
         {
             "origin":true,
-            "pipelineTrain":"[TshiftV6Rfwash()]",
+            "pipelineTrain":"[RTCRfwash()]",
             "pipelineVali":"[]",
             "pipelineTest":"[]"
         },
@@ -329,7 +329,7 @@
         "dataset":
         {
             "origin":true,
-            "pipelineTrain":"[TshiftV6Rfwash()]",
+            "pipelineTrain":"[RTCRfwash()]",
             "pipelineVali":"[]",
             "pipelineTest":"[]"
         },
@@ -353,7 +353,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Padding((72,20)), Normalize()]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Padding((72,20)), Normalize()]",
             "pipelineVali":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]",
             "pipelineTest":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]"
         },
@@ -377,7 +377,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Padding((72,20)), Normalize()]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Padding((72,20)), Normalize()]",
             "pipelineVali":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]",
             "pipelineTest":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]"
         },
@@ -401,7 +401,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput([2,10])]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITInput([2,10])]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput([2,10])]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput([2,10])]"
         },
@@ -425,7 +425,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PaddingRVS(72),TshiftV6(),SoliFeature()]",
+            "pipelineTrain":"[PaddingRVS(72),RTC(),SoliFeature()]",
             "pipelineVali":"[PaddingRVS(72),SoliFeature()]",
             "pipelineTest":"[PaddingRVS(72),SoliFeature()]"
         },
@@ -451,7 +451,7 @@
         "dataset":
         {
             "origin":true,
-            "pipelineTrain":"[TshiftV6Rfwash()]",
+            "pipelineTrain":"[RTCRfwash()]",
             "pipelineVali":"[]",
             "pipelineTest":"[]"
         },
@@ -476,7 +476,7 @@
         "dataset":
         {
             "origin":true,
-            "pipelineTrain":"[TshiftV6Rfwash()]",
+            "pipelineTrain":"[RTCRfwash()]",
             "pipelineVali":"[]",
             "pipelineTest":"[]"
         },
@@ -500,7 +500,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Padding((72,20)), Normalize()]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Padding((72,20)), Normalize()]",
             "pipelineVali":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]",
             "pipelineTest":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]"
         },

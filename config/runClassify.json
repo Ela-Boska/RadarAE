@@ -1,7 +1,7 @@
 {
     "RadarAE_2x10":
     {
-        "pretrainCfgVersion":"RadarAE_patchSize2x10_halfAugV6_shareWeight",
+        "pretrainCfgVersion":"RadarAE_patchSize2x10_RTC_shareWeight",
         "classifyCfg":
         {
             "seed": 3431,
@@ -14,7 +14,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]"
         },
@@ -29,7 +29,7 @@
     },
     "RadarAE_2x20":
     {
-        "pretrainCfgVersion":"RadarAE_patchSize2x20_halfAugV6_shareWeight",
+        "pretrainCfgVersion":"RadarAE_patchSize2x20_RTC_shareWeight",
         "classifyCfg":
         {
             "seed": 3431,
@@ -42,7 +42,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]"
         },
@@ -56,7 +56,7 @@
     },
     "RadarAE_2x5":
     {
-        "pretrainCfgVersion":"RadarAE_patchSize2x5_halfAugV6_shareWeight",
+        "pretrainCfgVersion":"RadarAE_patchSize2x5_RTC_shareWeight",
         "classifyCfg":
         {
             "seed": 3431,
@@ -69,7 +69,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]"
         },
@@ -83,7 +83,7 @@
     },
     "RadarAE_1x10":
     {
-        "pretrainCfgVersion":"RadarAE_patchSize1x10_halfAugV6_shareWeight",
+        "pretrainCfgVersion":"RadarAE_patchSize1x10_RTC_shareWeight",
         "classifyCfg":
         {
             "seed": 3431,
@@ -96,7 +96,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]"
         },
@@ -110,7 +110,7 @@
     },
     "RadarAE_3x10":
     {
-        "pretrainCfgVersion":"RadarAE_patchSize3x10_halfAugV6_shareWeight",
+        "pretrainCfgVersion":"RadarAE_patchSize3x10_RTC_shareWeight",
         "classifyCfg":
         {
             "seed": 3431,
@@ -123,7 +123,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]"
         },
@@ -137,7 +137,7 @@
     },
     "BERT":
     {
-        "pretrainCfgVersion":"BERT_patchSize3x10_halfAugV6_shareWeight",
+        "pretrainCfgVersion":"BERT_patchSize3x10_RTC_shareWeight",
         "classifyCfg":
         {
             "seed": 3431,
@@ -150,7 +150,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]"
         },
@@ -164,7 +164,7 @@
     },
     "RadarAE_3x10_noCrop":
     {
-        "pretrainCfgVersion":"RadarAE_patchSize3x10_halfAugV6_shareWeight_noCrop",
+        "pretrainCfgVersion":"RadarAE_patchSize3x10_RTC_shareWeight_noCrop",
         "classifyCfg":
         {
             "seed": 3431,
@@ -177,7 +177,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA_noCrop(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,60)), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA_noCrop(3e5, 5e4), RTC(), Normalize(), Padding((72,60)), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVA_noCrop(3e5, 5e4), Normalize(), Padding((72,60)), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVA_noCrop(3e5, 5e4), Normalize(), Padding((72,60)), VITInput(mask_cfg)]"
         },
@@ -191,7 +191,7 @@
     },
     "RadarAE_3x10_mr0.25":
     {
-        "pretrainCfgVersion":"RadarAE_patchSize3x10_halfAugV6_shareWeight_MR0.25",
+        "pretrainCfgVersion":"RadarAE_patchSize3x10_RTC_shareWeight_MR0.25",
         "classifyCfg":
         {
             "seed": 3431,
@@ -204,7 +204,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]"
         },
@@ -218,7 +218,7 @@
     },
     "RadarAE_3x10_mr0.375":
     {
-        "pretrainCfgVersion":"RadarAE_patchSize3x10_halfAugV6_shareWeight_MR0.375",
+        "pretrainCfgVersion":"RadarAE_patchSize3x10_RTC_shareWeight_MR0.375",
         "classifyCfg":
         {
             "seed": 3431,
@@ -231,7 +231,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]"
         },
@@ -245,7 +245,7 @@
     },
     "RadarAE_3x10_noShareWeight":
     {
-        "pretrainCfgVersion":"RadarAE_patchSize3x10_halfAugV6",
+        "pretrainCfgVersion":"RadarAE_patchSize3x10_RTC",
         "classifyCfg":
         {
             "seed": 3431,
@@ -258,7 +258,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]"
         },
@@ -272,7 +272,7 @@
     },
     "RadarAE_3x10_mr0.5":
     {
-        "pretrainCfgVersion":"RadarAE_patchSize3x10_halfAugV6_shareWeight_MR0.5",
+        "pretrainCfgVersion":"RadarAE_patchSize3x10_RTC_shareWeight_MR0.5",
         "classifyCfg":
         {
             "seed": 3431,
@@ -285,7 +285,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]"
         },
@@ -299,7 +299,7 @@
     },
     "RadarAE_3x10_mr0.625":
     {
-        "pretrainCfgVersion":"RadarAE_patchSize3x10_halfAugV6_shareWeight_MR0.625",
+        "pretrainCfgVersion":"RadarAE_patchSize3x10_RTC_shareWeight_MR0.625",
         "classifyCfg":
         {
             "seed": 3431,
@@ -312,7 +312,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]"
         },
@@ -326,7 +326,7 @@
     },
     "RadarAE_3x10_mr0.875":
     {
-        "pretrainCfgVersion":"RadarAE_patchSize3x10_halfAugV6_shareWeight_MR0.875",
+        "pretrainCfgVersion":"RadarAE_patchSize3x10_RTC_shareWeight_MR0.875",
         "classifyCfg":
         {
             "seed": 3431,
@@ -339,7 +339,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]"
         },
@@ -380,7 +380,7 @@
     },
     "RadarAE_3x20":
     {
-        "pretrainCfgVersion":"RadarAE_patchSize3x20_halfAugV6_shareWeight",
+        "pretrainCfgVersion":"RadarAE_patchSize3x20_RTC_shareWeight",
         "classifyCfg":
         {
             "seed": 3431,
@@ -393,7 +393,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]"
         },
@@ -407,7 +407,7 @@
     },
     "RadarAE_3x5":
     {
-        "pretrainCfgVersion":"RadarAE_patchSize3x5_halfAugV6_shareWeight",
+        "pretrainCfgVersion":"RadarAE_patchSize3x5_RTC_shareWeight",
         "classifyCfg":
         {
             "seed": 3431,
@@ -420,7 +420,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]"
         },
@@ -434,7 +434,7 @@
     },
     "RadarAE_4x10":
     {
-        "pretrainCfgVersion":"RadarAE_patchSize4x10_halfAugV6_shareWeight",
+        "pretrainCfgVersion":"RadarAE_patchSize4x10_RTC_shareWeight",
         "classifyCfg":
         {
             "seed": 3431,
@@ -447,7 +447,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput(mask_cfg)]"
         },
@@ -461,7 +461,7 @@
     },
     "RadarAE_3x10_RV":
     {
-        "pretrainCfgVersion":"RadarAE_patchSize3x10_halfAugV6_shareWeight_RV",
+        "pretrainCfgVersion":"RadarAE_patchSize3x10_RTC_shareWeight_RV",
         "classifyCfg":
         {
             "seed": 3431,
@@ -474,7 +474,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), getRV(), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), getRV(), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), getRV(), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), getRV(), VITInput(mask_cfg)]"
         },
@@ -488,7 +488,7 @@
     },
     "RadarAE_3x10_RA":
     {
-        "pretrainCfgVersion":"RadarAE_patchSize3x10_halfAugV6_shareWeight_RA",
+        "pretrainCfgVersion":"RadarAE_patchSize3x10_RTC_shareWeight_RA",
         "classifyCfg":
         {
             "seed": 3431,
@@ -501,7 +501,7 @@
         },
         "dataset":
         {
-            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), getRA(), VITInput(mask_cfg)]",
+            "pipelineTrain":"[PriVA(3e5, 5e4), RTC(), Normalize(), Padding((72,20)), getRA(), VITInput(mask_cfg)]",
             "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), getRA(), VITInput(mask_cfg)]",
             "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), getRA(), VITInput(mask_cfg)]"
         },
