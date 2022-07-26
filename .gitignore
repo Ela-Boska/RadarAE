@@ -1,0 +1,6 @@
+.*/
+log/
+Logs/Pretrain/*
+__pycache__/
+saved/*.pt
+packs/

@@ -1,0 +1,972 @@
+{
+    "RadarAE_patchSize2x10_halfAugV6_shareWeight":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.75,
+            "mask_prob": 0.8,
+            "patch_size": [2,10]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [2,10],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize2x10_noAug_shareWeight":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.75,
+            "mask_prob": 0.8,
+            "patch_size": [2,10]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [2,10],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize2x20_halfAugV6_shareWeight":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.75,
+            "mask_prob": 0.8,
+            "patch_size": [2,20]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [2,20],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize2x5_halfAugV6_shareWeight":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.75,
+            "mask_prob": 0.8,
+            "patch_size": [2,5]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [2,5],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize1x10_halfAugV6_shareWeight":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.75,
+            "mask_prob": 0.8,
+            "patch_size": [1,10]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [1,10],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize3x10_halfAugV6_shareWeight":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.75,
+            "mask_prob": 0.8,
+            "patch_size": [3,10]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [3,10],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "BERT_patchSize3x10_halfAugV6_shareWeight":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.15,
+            "mask_prob": 0.8,
+            "replace_prob":0.1,
+            "patch_size": [1,20]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), BERTmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [1,20],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"FC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true,
+            "isBert":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize3x10_halfAugV6_shareWeight_noCrop":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.75,
+            "mask_prob": 0.8,
+            "patch_size": [3,10]
+        },
+        "dataset":
+        {
+            "path":"packs_noCrop/",
+            "pipeline":"[PriVA_noCrop(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,60)), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,60,2],
+            "patch_size" : [3,10],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize3x10_halfAugV6_shareWeight_MR0.25":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.25,
+            "mask_prob": 0.8,
+            "patch_size": [3,10]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [3,10],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize3x10_halfAugV6_shareWeight_MR0.375":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.375,
+            "mask_prob": 0.8,
+            "patch_size": [3,10]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [3,10],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize3x10_halfAugV6_shareWeight_MR0.5":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.5,
+            "mask_prob": 0.8,
+            "patch_size": [3,10]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [3,10],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize3x10_halfAugV6_shareWeight_MR0.625":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.625,
+            "mask_prob": 0.8,
+            "patch_size": [3,10]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [3,10],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize3x10_halfAugV6_shareWeight_MR0.875":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.875,
+            "mask_prob": 0.8,
+            "patch_size": [3,10]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [3,10],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize3x10_halfAugV6":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.75,
+            "mask_prob": 0.8,
+            "patch_size": [3,10]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [3,10],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":false
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize3x10_noAug_shareWeight":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.75,
+            "mask_prob": 0.8,
+            "patch_size": [3,10]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [3,10],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize2x10_halfAugV6_shareWeight_RV":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.75,
+            "mask_prob": 0.8,
+            "patch_size": [2,10]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), getRV(), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [2,10],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize2x10_halfAugV6_shareWeight_RA":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.75,
+            "mask_prob": 0.8,
+            "patch_size": [2,10]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), getRA(), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [2,10],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize3x20_halfAugV6_shareWeight":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.75,
+            "mask_prob": 0.8,
+            "patch_size": [3,20]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [3,20],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize3x5_halfAugV6_shareWeight":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.75,
+            "mask_prob": 0.8,
+            "patch_size": [3,5]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [3,5],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize4x10_halfAugV6_shareWeight":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.75,
+            "mask_prob": 0.8,
+            "patch_size": [4,10]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 2,
+            "input_shape" : [72,20,2],
+            "patch_size" : [4,10],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize3x10_halfAugV6_shareWeight_RA":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.75,
+            "mask_prob": 0.8,
+            "patch_size": [3,10]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), getRA(), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 1,
+            "input_shape" : [72,20,1],
+            "patch_size" : [3,10],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    },
+    "RadarAE_patchSize3x10_halfAugV6_shareWeight_RV":
+    {
+        "pretrainCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 3600,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "maskCfg":
+        {
+            "mask_ratio": 0.75,
+            "mask_prob": 0.8,
+            "patch_size": [3,10]
+        },
+        "dataset":
+        {
+            "path":"packs/",
+            "pipeline":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), getRV(), VITmask(mask_cfg)]"
+        },
+        "encoder": {
+            "type": "RadarAE",
+            "channel" : 1,
+            "input_shape" : [72,20,1],
+            "patch_size" : [3,10],
+            "hidden": 300,
+            "hidden_ff": 256,
+            "mlp_ratio":4,
+            "n_layers": 3,
+            "n_heads": 12,
+            "emb_norm": false,
+            "decoderType":"TFC",
+            "hidden_decoder":150,
+            "n_layers_decoder":1,
+            "n_heads_decoder":3,
+            "shareWeight":true
+        },
+        "save_path":"saved/Pretrain/",
+        "pretrain_model": null,
+        "use_sup_data":false
+    }
+}

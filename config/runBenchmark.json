@@ -1,0 +1,514 @@
+{
+    "DCNN":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "pipelineTrain":"[PriVA(3e5, 5e4), Normalize()]",
+            "pipelineVali":"[PriVA(3e5, 5e4), Normalize()]",
+            "pipelineTest":"[PriVA(3e5, 5e4), Normalize()]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkDCNN"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "DCNN_AUG":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "pipelineTrain":"[PriVA(3e5, 5e4), Tshift(), Tscale(), Normalize()]",
+            "pipelineVali":"[PriVATest(3e5, 5e4), Normalize()]",
+            "pipelineTest":"[PriVATest(3e5, 5e4), Normalize()]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkDCNN"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "DCNN_subAUG":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "pipelineTrain":"[PriVA(3e5, 5e4), Tshift(), Normalize()]",
+            "pipelineVali":"[PriVATest(3e5, 5e4), Normalize()]",
+            "pipelineTest":"[PriVATest(3e5, 5e4), Normalize()]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkDCNN"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "DCNN_subAUG2":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "pipelineTrain":"[PriVA(3e5, 5e4), Tscale(), Normalize()]",
+            "pipelineVali":"[PriVATest(3e5, 5e4), Normalize()]",
+            "pipelineTest":"[PriVATest(3e5, 5e4), Normalize()]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkDCNN"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "DCNN_subAUG3":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "pipelineTrain":"[PriVA(3e5, 5e4), Tscale2(), Normalize()]",
+            "pipelineVali":"[PriVATest(3e5, 5e4), Normalize()]",
+            "pipelineTest":"[PriVATest(3e5, 5e4), Normalize()]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkDCNN"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "MultiModalConvLstm":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "origin":true,
+            "pipelineTrain":"[]",
+            "pipelineVali":"[]",
+            "pipelineTest":"[]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkMMCL"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "DCNN2":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "pipelineTrain":"[PriVA(3e5, 5e4), Normalize()]",
+            "pipelineVali":"[PriVA(3e5, 5e4), Normalize()]",
+            "pipelineTest":"[PriVA(3e5, 5e4), Normalize()]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkDCNN2"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "DCNN3":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "pipelineTrain":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]",
+            "pipelineVali":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]",
+            "pipelineTest":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkDCNN3"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "RFWash":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "origin":true,
+            "pipelineTrain":"[]",
+            "pipelineVali":"[]",
+            "pipelineTest":"[]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkRFWash"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "DeepGRU":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "pipelineTrain":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]",
+            "pipelineVali":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]",
+            "pipelineTest":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkDeepGRU"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "RadarAE_noPretrain":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "pipelineTrain":"[PriVA(3e5, 5e4), Normalize(), Padding((72,20)), VITInput([2,10])]",
+            "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput([2,10])]",
+            "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput([2,10])]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkRadarAE_noPretrain"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "DCNN3_shift":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Padding((72,20)), Normalize()]",
+            "pipelineVali":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]",
+            "pipelineTest":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkDCNN3"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "RFWash_shift":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "origin":true,
+            "pipelineTrain":"[TshiftV6Rfwash()]",
+            "pipelineVali":"[]",
+            "pipelineTest":"[]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkRFWash"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "RFWash_VA_shift":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "origin":true,
+            "pipelineTrain":"[TshiftV6Rfwash()]",
+            "pipelineVali":"[]",
+            "pipelineTest":"[]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkRFWash_VA"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "DeepGRU_shift":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Padding((72,20)), Normalize()]",
+            "pipelineVali":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]",
+            "pipelineTest":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkDeepGRU"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "DeepBiLSTM_shift":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Padding((72,20)), Normalize()]",
+            "pipelineVali":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]",
+            "pipelineTest":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkDeepBiLSTM"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "RadarAE_noPretrain_shift":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Normalize(), Padding((72,20)), VITInput([2,10])]",
+            "pipelineVali":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput([2,10])]",
+            "pipelineTest":"[PriVATest(3e5, 5e4), Normalize(), Padding((72,20)), VITInput([2,10])]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkRadarAE_noPretrain"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "soli":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "pipelineTrain":"[PaddingRVS(72),TshiftV6(),SoliFeature()]",
+            "pipelineVali":"[PaddingRVS(72),SoliFeature()]",
+            "pipelineTest":"[PaddingRVS(72),SoliFeature()]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkSoli"
+        },
+        "save_path":"saved/Benchmark/",
+        "loss":"hinge"
+    },
+    "DeepSoli_shift":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "origin":true,
+            "pipelineTrain":"[TshiftV6Rfwash()]",
+            "pipelineVali":"[]",
+            "pipelineTest":"[]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkDeepSoli"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "DeepSoli_VA_shift":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "origin":true,
+            "pipelineTrain":"[TshiftV6Rfwash()]",
+            "pipelineVali":"[]",
+            "pipelineTest":"[]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkDeepSoli_VA"
+        },
+        "save_path":"saved/Benchmark/"
+    },
+    "SVM_shift":
+    {
+        "classifyCfg":
+        {
+            "seed": 3431,
+            "batch_size": 128,
+            "lr": 1e-3,
+            "n_epochs": 700,
+            "warmup": 0.1,
+            "save_steps": 300,
+            "total_steps": 200000000
+        },
+        "dataset":
+        {
+            "pipelineTrain":"[PriVA(3e5, 5e4), TshiftV6(), Padding((72,20)), Normalize()]",
+            "pipelineVali":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]",
+            "pipelineTest":"[PriVA(3e5, 5e4), Padding((72,20)), Normalize()]"
+        },
+        "decoder":
+        {
+            "type":"BenchmarkDCNN3"
+        },
+        "save_path":"saved/Benchmark/",
+        "loss":"hinge"
+    }
+}
