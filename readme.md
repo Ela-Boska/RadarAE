@@ -7,6 +7,8 @@
 # Download Dataset
 Download Link: 
 
+https://mega.nz/file/i8YyyJ7I#9B667HoRieSlE95nTJ3Lwe8_hjrAWJuDxFrXW-KfHr0
+
 put the dataset to predefined position
 ```
 cp ${path-to-dataset} ${project-base-dir}/data/
